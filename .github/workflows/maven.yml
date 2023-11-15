@@ -7,17 +7,18 @@
 # documentation.
 
 name: Java CI with Maven
-steps: 
-      - name: Update Secrets 
-        run: 
-        env: 
-          CENTRAL_REPO_TOKEN: ${{ secrets.CENTRAL_REPO_TOKEN }}
 
 on:
   push:
     branches: [ "vp-rem" ]
   pull_request:
     branches: [ "vp-rem" ]
+
+    steps: 
+      - name: Update Secrets 
+        run: 
+        env: 
+          CENTRAL_REPO_TOKEN: ${{ secrets.CENTRAL_REPO_TOKEN }}
 
 jobs:
   build:
